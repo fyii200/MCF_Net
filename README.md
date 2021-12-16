@@ -2,6 +2,9 @@
 MCF_Net is a deep learning model based on *DenseNet121* for retinal image quality assessment (RIQA) developed by [Fu et al (2019)](https://arxiv.org/abs/1907.05345). Original project web can be found [here](https://github.com/HzFu/EyeQ).  
 
 -----------------
+*Huazhu Fu, Boyang Wang, Jianbing Shen, Shanshan Cui, Yanwu Xu, Jiang Liu, Ling Shao, "Evaluation of Retinal Image Quality Assessment Networks in Different Color-spaces", in MICCAI, 2019.*
+
+-----------------
 ## Brief Description of Network Architecture
 MCF-Net transforms RGB retinal images into two other colour spaces, i.e. HSV and LAB, before passing all three independently to different base CNNs. The output of these base networks are then concatenated within a fusion block, representing **feature-level** fusion. The output of this feature-level fusion is then concatenated with the output of the three independent base networks. This second fusion corresponds to **prediction-level** fusion. The authors argue that this two-level fusion 'guarantees the full integration of the different colour spaces'. MCF-Net achieved a test accuracy of **91.75%.**
 
