@@ -16,8 +16,9 @@ The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com
 
 ## Re-implementation Steps
 1. upload images to the 'images' folder found in home directory.
-2. Run MCF_Net/test.py script. Alternatively, run implementation.ipynb in home directory.
-3. Result file can be found in home directory.
+2. **Download** the trained model (.tar file; 28.86M parameters) [here](https://onedrive.live.com/?authkey=%21AJEJujrShK2M9Zk&cid=F3A8A31ABFAC51B0&id=F3A8A31ABFAC51B0%213790&parId=F3A8A31ABFAC51B0%21253&action=locate) and **upload** it to 'MCF_Net/result'.
+3. Run MCF_Net/test.py script. Alternatively, run implementation.ipynb in home directory.
+4. Result file can be found in home directory.
 
 ## Examples of Images Predicted as 'Good', 'Usable' and 'Reject'
 *Images are from EyePACS, under 'sample.zip'.*
