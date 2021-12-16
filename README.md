@@ -1,5 +1,5 @@
-# Multiple Color-space Fusion Network (MCF-Net)
-Re-implementation of MCF_Net, a deep learning model based on *DenseNet121* for retinal image quality assessment (RIQA) developed by [Fu et al (2019)](https://arxiv.org/abs/1907.05345). Original project web can be found [here](https://github.com/HzFu/EyeQ).  
+# Re-implementation of Multiple Color-space Fusion Network (MCF-Net)
+MCF_Net is a deep learning model based on *DenseNet121* for retinal image quality assessment (RIQA) developed by [Fu et al (2019)](https://arxiv.org/abs/1907.05345). Original project web can be found [here](https://github.com/HzFu/EyeQ).  
 
 -----------------
 ## Brief Description of Network Architecture
@@ -16,7 +16,7 @@ The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com
 
 ## Re-implementation Steps
 1. upload images to the 'images' folder found in home directory.
-2. **Download** the trained model (.tar file; 28.86M parameters) [here](https://onedrive.live.com/?authkey=%21AJEJujrShK2M9Zk&cid=F3A8A31ABFAC51B0&id=F3A8A31ABFAC51B0%213790&parId=F3A8A31ABFAC51B0%21253&action=locate) and **upload** it to 'MCF_Net/result'.
+2. **Download** the trained model (DenseNet121_v3_v1.tar; 28.86M parameters) [here](https://onedrive.live.com/?authkey=%21AJEJujrShK2M9Zk&cid=F3A8A31ABFAC51B0&id=F3A8A31ABFAC51B0%213790&parId=F3A8A31ABFAC51B0%21253&action=locate) and **upload** it to 'MCF_Net/'.
 3. Run MCF_Net/test.py script. Alternatively, run implementation.ipynb in home directory.
 4. Result file can be found in home directory.
 
