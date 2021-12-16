@@ -26,7 +26,7 @@ The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com
 ## Examples of Images Predicted as 'Good', 'Usable' and 'Reject'
 *Images are taken from EyePACS 'sample.zip'*
 
-**GOOD      >      USABLE      >      REJECT**
+**GOOD      —>      USABLE      —>      REJECT**
 <p float="left">
   <img src="/images/good.jpeg" width="200" /> 
   <img src="/images/usable.jpeg" width="200" /> 
