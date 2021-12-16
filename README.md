@@ -25,9 +25,9 @@ The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com
 
 **GOOD      >      USABLE      >      REJECT**
 <p float="left">
-  <img src="/images/good.jpeg" width="300" /> 
-  <img src="/images/useable.jpeg" width="300" /> 
-  <img src="/images/reject.jpeg" width="300" />
+  <img src="/images/good.jpeg" width="200" /> 
+  <img src="/images/useable.jpeg" width="200" /> 
+  <img src="/images/reject.jpeg" width="200" />
 </p>
 
 
