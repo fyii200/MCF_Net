@@ -1,5 +1,5 @@
 # Re-implementation of Multiple Color-space Fusion Network (MCF-Net)
-MCF_Net is a deep learning model based on *DenseNet121* for retinal image quality assessment (RIQA) developed by [Fu et al (2019)](https://arxiv.org/abs/1907.05345). Original project web can be found [here](https://github.com/HzFu/EyeQ).  
+MCF_Net is a deep-learning system based on *DenseNet121* for retinal image quality assessment (RIQA) developed by [Fu et al (2019)](https://arxiv.org/abs/1907.05345). Original project web can be found [here](https://github.com/HzFu/EyeQ).  
 
 -----------------
 *Huazhu Fu, Boyang Wang, Jianbing Shen, Shanshan Cui, Yanwu Xu, Jiang Liu, Ling Shao, "Evaluation of Retinal Image Quality Assessment Networks in Different Color-spaces", in MICCAI, 2019.*
