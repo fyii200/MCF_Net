@@ -6,7 +6,7 @@ MCF_Net is a deep-learning system based on *DenseNet121* for retinal image quali
 
 -----------------
 ## Brief Description of Network Architecture
-MCF-Net transforms RGB retinal images into two other colour spaces, i.e. HSV and LAB, before passing all three independently to different base CNNs. The output of these base networks are then concatenated within a fusion block, representing **feature-level** fusion. The output of this feature-level fusion is then concatenated with the output of the three independent base networks. This second fusion corresponds to **prediction-level** fusion. The authors argue that this two-level fusion 'guarantees the full integration of the different colour spaces'. MCF-Net achieved the state-of-the-art test accuracy of **91.75%.**
+MCF-Net transforms RGB retinal images into two other colour spaces, i.e. HSV and LAB, before passing all three independently to different base CNNs. The output of these base networks are then concatenated within a fusion block (**feature-level** fusion). The output of this feature-level fusion is then concatenated with the output of the three independent base networks (**prediction-level** fusion). The authors argue that this two-level fusion 'guarantees the full integration of the different colour spaces'. MCF-Net achieved a test accuracy of **88.00%.**
 
 ## Eye-Quality Dataset (Eye-Q)
 The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com/c/diabetic-retinopathy-detection) dataset re-annotated with labels describing image quality as follows:
