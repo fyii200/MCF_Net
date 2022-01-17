@@ -18,7 +18,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 parser = argparse.ArgumentParser(description='EyeQ_dense121')
 parser.add_argument('--model_dir', type=str, default='MCF_Net/')
 parser.add_argument('--pre_model', type=str, default='DenseNet121_v3_v1')
-parser.add_argument('--test_images_dir', type=str, default='/images')
+parser.add_argument('--test_images_dir', type=str, default='images')
 parser.add_argument('--res_name', type=str, default='result')
 parser.add_argument('--n_classes', type=int, default=3)
 
@@ -57,14 +57,14 @@ iters_per_epoch = len(test_loader)
 bar = Bar('Processing {}'.format('inference'), max=len(test_loader))
 bar.check_tty = False
 for epochID, (imagesA, imagesB, imagesC) in enumerate(test_loader):
-    ## uncomment the following 3 lines if CUDA is enabled (GPU)
-    #imagesA = imagesA.cuda()
-    #imagesB = imagesB.cuda()
-    #imagesC = imagesC.cuda()
+    # uncomment the following 3 lines if CUDA is enabled (GPU)
+    imagesA = imagesA.cuda()
+    imagesB = imagesB.cuda()
+    imagesC = imagesC.cuda()
 
     begin_time = time.time()
     _, _, _, _, result_mcs = model(imagesA, imagesB, imagesC)
-    outPRED_mcs = torch.cat((outPRED_mcs, result_mcs.data), 0)
+    outPRED_mcs = torch.cat((outPRED_mcs.cuda(), result_mcs.data), 0)
     batch_time = time.time() - begin_time
     bar.suffix = '{} / {} | Time: {batch_time:.4f}'.format(epochID + 1, len(test_loader),
                                                            batch_time=batch_time * (iters_per_epoch - epochID) / 60)
@@ -76,7 +76,7 @@ labels=['Good', 'Usable', 'Reject']
 result= {'name':[], 'quality':[]}
 for ind in range(len(data_test)):
     result['name'].append( data_test.image_names[ind][len(args.test_images_dir):] )
-    result['quality'].append( labels[outPRED_mcs.argmax(dim=1).numpy()[ind]] )
+    result['quality'].append( labels[outPRED_mcs.argmax(dim=1).cpu().numpy()[ind]] )
 result = pd.DataFrame(result)
 result.to_csv(args.res_name)                              
                                
