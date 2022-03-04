@@ -21,7 +21,7 @@ The network was built on Eye-Q, a subset of the [EyePACS](https://www.kaggle.com
 1. Create a new folder in home directory and upload retinal images to that folder.
 2. **Download** the trained model (DenseNet121_v3_v1.tar; 28.86M parameters) [here](https://onedrive.live.com/?authkey=%21AJEJujrShK2M9Zk&cid=F3A8A31ABFAC51B0&id=F3A8A31ABFAC51B0%213790&parId=F3A8A31ABFAC51B0%21253&action=locate) and **upload** it to 'MCF_Net/'.
 3. Run MCF_Net/test.py from terminal: *python MCF_Net/test.py --test_images_dir {name of image folder} --res_name {name of result folder}*
-4. Result file *(res_name)* can be found in home directory.
+4. Result file *(res_name)* will be saved to the home directory.
 
 ## Examples of Images Predicted as 'Good', 'Usable' and 'Reject'
 *Images are taken from EyePACS 'sample.zip'*
