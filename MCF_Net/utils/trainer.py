@@ -1,11 +1,11 @@
 import time
 import torch
-from progress.bar import Bar
+from MCF_Net.progress.bar import Bar
 import numpy as np
 import pandas as pd
 
 
-def train_step(train_loader, model, epoch, optimizer, criterion, args):
+def train_step(train_loader, model, epoch, optimizer, MAE_criterion, args):
 
     # switch to train mode
     model.train()
@@ -16,7 +16,7 @@ def train_step(train_loader, model, epoch, optimizer, criterion, args):
     bar = Bar('Processing {} Epoch -> {} / {}'.format('train', epoch+1, args.epochs), max=iters_per_epoch)
     bar.check_tty = False
 
-    for step, (imagesA, imagesB, imagesC, labels) in enumerate(train_loader):
+    for step, (imagesA, imagesB, imagesC, labels, scaled_labels) in enumerate(train_loader):
         start_time = time.time()
 
         torch.set_grad_enabled(True)
@@ -58,9 +58,9 @@ def train_step(train_loader, model, epoch, optimizer, criterion, args):
     return epoch_loss
 
 
-def validation_step(val_loader, model, criterion):
+def validation_step(val_loader, model, MAE_criterion):
 
-    # switch to train mode
+    # switch to test mode
     model.eval()
     epoch_loss = 0
     iters_per_epoch = len(val_loader)
@@ -76,7 +76,7 @@ def validation_step(val_loader, model, criterion):
 
         _, _, _, _, outputs = model(imagesA, imagesB, imagesC)
         with torch.no_grad():
-            loss = criterion(outputs, labels)
+            loss = MAE_criterion(outputs, scaled_labels)
             epoch_loss += loss.item()
 
         end_time = time.time()

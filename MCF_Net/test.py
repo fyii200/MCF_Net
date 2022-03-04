@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Setting parameters
 parser = argparse.ArgumentParser(description='EyeQ_dense121')
-parser.add_argument('--model_dir', type=str, default='MCF_Net/')
+parser.add_argument('--model_dir', type=str, default='MCF_Net/categorical_best_model')
 parser.add_argument('--pre_model', type=str, default='DenseNet121_v3_v1')
 parser.add_argument('--test_images_dir', type=str, default='images')
 parser.add_argument('--res_name', type=str, default='result')
@@ -75,11 +75,10 @@ bar.finish()
 labels=['Good', 'Usable', 'Reject']
 result= {'name':[], 'quality':[]}
 for ind in range(len(data_test)):
-    result['name'].append( data_test.image_names[ind][len(args.test_images_dir):] )
+    result['name'].append( data_test.image_names[ind][len(args.test_images_dir)+1:] )
     result['quality'].append( labels[outPRED_mcs.argmax(dim=1).cpu().numpy()[ind]] )
 result = pd.DataFrame(result)
-result.to_csv(args.res_name)                              
-                               
+result.to_csv(args.res_name)                                                           
                               
                     
 

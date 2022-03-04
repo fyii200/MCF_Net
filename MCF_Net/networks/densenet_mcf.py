@@ -6,10 +6,8 @@ import torch.nn.functional as F
 
 class DenseNet121_v0(nn.Module):
     """Model modified.
-
     The architecture of our model is the same as standard DenseNet121
     except the classifier layer which has an additional sigmoid function.
-
     """
     def __init__(self, n_class):
         super(DenseNet121_v0, self).__init__()
@@ -27,10 +25,8 @@ class DenseNet121_v0(nn.Module):
 
 class dense121_mcs(nn.Module):
     """Model modified.
-
     The architecture of our model is the same as standard DenseNet121
     except the classifier layer which has an additional sigmoid function.
-
     """
 
     def __init__(self, n_class):

@@ -1,4 +1,4 @@
 ,name,quality
-0,/reject.jpeg,Reject
-1,/good.jpeg,Good
-2,/usable.jpeg,Usable
+0,reject.jpeg,Reject
+1,good.jpeg,Good
+2,usable.jpeg,Usable
